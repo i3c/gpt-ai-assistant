@@ -56,10 +56,6 @@ const createChatCompletion = ({
   const body = {
     model: hasImage({ messages }) ? config.OPENAI_VISION_MODEL : model,
     messages,
-    temperature,
-    max_tokens: maxTokens,
-    frequency_penalty: frequencyPenalty,
-    presence_penalty: presencePenalty,
   };
   return client.post('/v1/chat/completions', body);
 };
